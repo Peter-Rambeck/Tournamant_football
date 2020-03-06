@@ -1,6 +1,10 @@
 package Model;
 
+import jdk.jshell.execution.LoaderDelegate;
+
+import java.sql.Time;
 import java.time.LocalTime;
+import java.util.Arrays;
 
 public class Match {
 
@@ -11,20 +15,51 @@ public class Match {
     private String result;
     private String type;
     private int[] score;
-    private static int matchCount = 1;
+    private static int matchCount = 0;
 
 
-
-    public Match(LocalTime time, Team team1, Team team2) {
-
-        this.time = time;
-        this.team1 = team1;
-        this.team2 = team2;
-        this.id = matchCount;
+// LocalTime time, Team team1, Team team2
+    public Match() {
+//        this.time = time;
+//        this.team1 = team1;
+//        this.team2 = team2;
         matchCount++;
+        this.id = matchCount;
     }
 
-    //Constuctoer
+    @Override
+    public String toString() {
+        return "Match#" + id +
+                " time:" + time +
+                " " + team1.getName() +
+                " vs " + team2.getName();
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public void setTeams(Team team1, Team team2) {
+        this.team1 = team1;
+        this.team2 = team2;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setScore(int[] score) {
+        this.score = score;
+    }
+
+    public static void setMatchCount(int matchCount) {
+        Match.matchCount = matchCount;
+    }
+
     public void setResult(String result) {
             this.result = result;
     }

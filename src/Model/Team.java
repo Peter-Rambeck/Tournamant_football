@@ -12,14 +12,14 @@ public class Team {
     private int score;
     private String position;
     private ArrayList<Player> players = new ArrayList<Player>();
-    String attacker;
-    String defender;
+    // String attacker;
+    // String defender;
 
 
     public Team(String teamname, String [] memberNames) {
         this.name = teamname;
-        attacker = memberNames[0];
-        defender = memberNames[1];
+        // attacker = memberNames[0];
+        // defender = memberNames[1];
         this.id = nextId;
         nextId++;
 
